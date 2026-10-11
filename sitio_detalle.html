@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitio recreativo - El Dorado, Meta</title>
+  <link rel="icon" href="imagenes/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>El Dorado, Meta</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sitios.html">Sitios recreativos</a></li>
+        <li><a href="hoteles.html">Hoteles</a></li>
+        <li><a href="comercio.html">Comercio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Esta plantilla está vacía: el script la llena según el sitio elegido -->
+  <main id="detalle"></main>
+
+  <footer><p>Turismo en El Dorado, Meta</p></footer>
+
+  <script src="datos.js"></script>
+  <script>
+    // La dirección es sitio.html?id=pipolin -> aquí leemos el "pipolin"
+    const id = new URLSearchParams(location.search).get("id");
+    // find busca en el arreglo el sitio cuyo id coincide
+    const s = sitios.find(x => x.id === id);
+    const detalle = document.getElementById("detalle");
+
+    if (!s) {
+      detalle.innerHTML = `<p>No encontramos ese sitio. <a href="sitios.html">Volver a los sitios</a></p>`;
+    } else {
+      document.title = s.nombre + " - El Dorado, Meta";
+      detalle.innerHTML = `
+        <h2>${s.nombre}</h2>
+        ${s.imagen ? `<img src="imagenes/${s.imagen}" alt="${s.nombre}">` : ""}
+        <p>${s.descripcion}</p>
+        <h3>${s.tituloServicios || "Características y servicios principales"}</h3>
+        <ul>${s.servicios.map(x => `<li><strong>${x[0]}:</strong> ${x[1]}</li>`).join("")}</ul>
+        <h3>Ubicación y contacto</h3>
+        <ul>
+          <li>${s.ubicacion}</li>
+          <li>Teléfono: ${s.telefonos.map(t => `<a href="tel:${t.replace(/\s/g, "")}">${t}</a>`).join(" / ")}</li>
+          ${s.redes ? `<li>${s.redes}</li>` : ""}
+        </ul>
+        <p><a href="sitios.html">← Volver a los sitios</a></p>`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sitios recreativos - El Dorado, Meta</title>
+  <meta name="description" content="Los mejores balnearios y sitios recreativos de El Dorado, Meta.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Dancing+Script:wght@500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body id="inicio">
+
+  <!-- ===== ENCABEZADO (igual que en todas las páginas) ===== -->
+  <header class="encabezado">
+    <img class="encabezado-logo" src="imagenes/logo.png" alt="Logo de El Dorado, Municipio de Paz">
+
+    <div class="encabezado-centro">
+      <p class="titulo-sitio">EL DORADO</p>
+      <nav class="menu" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="sitios.html">Sitios recreativos</a>
+        <a href="hoteles.html">Hoteles</a>
+        <a href="comercio.html">Comercio</a>
+      </nav>
+    </div>
+
+    <img class="encabezado-bandera" src="imagenes/banderaDorado.png" alt="Bandera de El Dorado, Meta">
+  </header>
+
+  <main>
+
+    <!-- ===== INTRO: título + 2 íconos (reutiliza los íconos del index) ===== -->
+    <section class="intro-seccion contenedor">
+      <img class="intro-icono" src="imagenes/iconosIndex/iconoPiscina.png" alt="">
+      <div class="intro-texto">
+        <h1 class="intro-titulo">¡Los mejores balnearios<br>del Dorado!</h1>
+        <p class="intro-subtitulo">Entre naturaleza, agua y tranquilidad</p>
+      </div>
+      <img class="intro-icono" src="imagenes/iconosIndex/iconoCalma.png" alt="">
+    </section>
+
+    <div class="contenedor"><hr class="divisor-seccion"></div>
+
+    <!-- ===== TARJETAS DE SITIOS =====
+         Se generan solas desde datos.js (ver script al final). Para agregar
+         un séptimo sitio, no se toca este HTML: se agrega el bloque en
+         datos.js y aquí aparece automáticamente. -->
+    <section class="contenedor">
+      <div class="tarjetas-sitios" id="lista-sitios"></div>
+    </section>
+
+    <!-- ===== LUGARES QUE DEBES CONOCER =====
+         Estos 3 no tienen ficha propia (no abren una pantalla de detalle),
+         así que van escritos directo aquí en vez de en datos.js. -->
+    <section class="lugares contenedor">
+      <h2 class="titulo-cafe">¡Lugares que debes conocer!</h2>
+
+      <div class="carrusel">
+        <button class="carrusel-boton carrusel-anterior" aria-label="Anterior">&#10094;</button>
+
+        <div class="carrusel-pista">
+          <article class="tarjeta-lugar">
+            <img src="imagenes/lugares/miRanchito.jpg" alt="Mi Ranchito">
+            <h3>Mi Ranchito</h3>
+            <p><strong>Centro Turístico</strong></p>
+            <p>Ofrece una variedad de <strong>atracciones</strong>:</p>
+            <ul>
+              <li>Cancha de voleibol</li>
+              <li>Cancha de futbol</li>
+              <li>Piscina cabañas</li>
+              <li>Zona de camping</li>
+              <li>Gimnasio</li>
+            </ul>
+            <p class="tarjeta-lugar-contacto">310 257 7664 · 310 857 6190</p>
+          </article>
+
+          <article class="tarjeta-lugar">
+            <img src="imagenes/lugares/piedemonteDorado.jpg" alt="Mirador Piedemonte Dorado">
+            <h3>Mirador<br>Piedemonte Dorado</h3>
+            <p><strong>Vista panorámica:</strong> disfruta de los paisajes de los Llanos Orientales.</p>
+            <p><strong>Observación de aves:</strong> conoce y disfruta la diversidad de aves locales.</p>
+            <p><strong>Gastronomía:</strong> saborea los platos tradicionales del Meta.</p>
+            <p class="tarjeta-lugar-contacto">Instagram</p>
+          </article>
+
+          <article class="tarjeta-lugar">
+            <img src="imagenes/lugares/laBandera.jpg" alt="Mirador La Bandera">
+            <h3>Mirador<br>La Bandera</h3>
+            <p>Homenaje a la construcción de paz de nuestro municipio.</p>
+            <p class="tarjeta-lugar-contacto">Vereda San Pedro, a 6 km de la cabecera municipal, por la vía a la vereda Caño Leche</p>
+          </article>
+        </div>
+
+        <button class="carrusel-boton carrusel-siguiente" aria-label="Siguiente">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- ===== EL ALMA DE NUESTRO PUEBLO (carrusel de fotos, igual mecánica
+         que "Postales" del index, con otras fotos) ===== -->
+    <section class="postales contenedor">
+      <h2 class="titulo-verde">El alma de nuestro pueblo</h2>
+
+      <div class="carrusel">
+        <button class="carrusel-boton carrusel-anterior" aria-label="Foto anterior">&#10094;</button>
+
+        <div class="carrusel-pista">
+          <img src="imagenes/postales2/postal1.jpeg" alt="Paisaje de El Dorado 1" loading="lazy">
+          <img src="imagenes/postales2/postal2.jpeg" alt="Paisaje de El Dorado 2" loading="lazy">
+          <img src="imagenes/postales2/postal3.jpeg" alt="Paisaje de El Dorado 3" loading="lazy">
+          <img src="imagenes/postales2/postal4.jpeg" alt="Paisaje de El Dorado 3" loading="lazy">
+          <img src="imagenes/postales2/postal5.jpeg" alt="Paisaje de El Dorado 3" loading="lazy">
+          <img src="imagenes/postales2/postal6.jpeg" alt="Paisaje de El Dorado 3" loading="lazy">
+          <img src="imagenes/postales2/postal7.jpeg" alt="Paisaje de El Dorado 3" loading="lazy">
+          <img src="imagenes/postales2/postal8.jpeg" alt="Paisaje de El Dorado 3" loading="lazy">
+          <img src="imagenes/postales2/postal9.jpeg" alt="Paisaje de El Dorado 3" loading="lazy">
+          <img src="imagenes/postales2/postal10.jpeg" alt="Paisaje de El Dorado 3" loading="lazy">
+          <img src="imagenes/postales2/postal11.jpeg" alt="Paisaje de El Dorado 3" loading="lazy">
+          <img src="imagenes/postales2/postal12.jpeg" alt="Paisaje de El Dorado 3" loading="lazy">
+
+        </div>
+
+        <button class="carrusel-boton carrusel-siguiente" aria-label="Foto siguiente">&#10095;</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA (igual que en todas las páginas) ===== -->
+  <footer class="pie">
+    <a class="pie-arriba" href="#inicio">Volver arriba</a>
+
+    <div class="pie-grid contenedor">
+      <div class="pie-izquierda">
+        <img class="pie-logo" src="imagenes/logo.png" alt="Logo de El Dorado">
+        <nav aria-label="Enlaces del pie de página">
+          <p class="pie-titulo">Explora</p>
+          <a href="index.html">Inicio</a>
+          <a href="sitios.html">Sitios recreativos</a>
+          <a href="hoteles.html">Hoteles</a>
+          <a href="comercio.html">Comercio</a>
+        </nav>
+      </div>
+
+      <div class="pie-derecha">
+        <img class="pie-bandera" src="imagenes/banderaDorado.png" alt="Bandera de El Dorado">
+        <p>Alcaldía de El Dorado<br>
+           Dirección: Cra 5 Nº 6-25 Centro El Dorado<br>
+           Teléfono móvil: 3213096008<br>
+           Correo institucional: contactenos@eldorado-meta.gov.co</p>
+        <p class="pie-web"><strong>Página web:</strong> <a href="https://www.eldorado-meta.gov.co/" target="_blank" rel="noopener">https://www.eldorado-meta.gov.co/</a></p>
+      </div>
+    </div>
+
+    <div class="pie-creditos">
+      <p>Proyecto aplicado de Trabajo de Grado – Tecnología en Desarrollo de Software, UNAD</p>
+      <p>Edgar Santiago Fonseca Jimenez</p>
+      <p>© 2026 Todos los derechos reservados</p>
+      <p>Las imágenes y descripciones son de carácter informativo</p>
+    </div>
+  </footer>
+
+  <!-- Primero los datos, luego el código que los usa, luego el comportamiento general -->
+  <script src="datos.js"></script>
+  <script>
+    // Genera las 6 tarjetas de sitios a partir de datos.js
+    document.getElementById("lista-sitios").innerHTML = sitios.map(s => `
+      <a class="tarjeta-sitio" href="sitio.html?id=${s.id}">
+        <h3>${s.nombreCorto}</h3>
+        <img src="imagenes/tarjetas/${s.id}.png" alt="${s.nombre}">
+      </a>`).join("");
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
