@@ -480,8 +480,9 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
 }
 .negocio-imagen img {
   width: 100%;
-  height: 230px;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;     /* proporción de una foto normal de celular: más alta que antes */
+  object-fit: cover;        /* llena todo el recuadro, sin espacios vacíos a los lados */
+  object-position: center;  /* qué parte se conserva al recortar (ver nota abajo) */
   border-radius: 14px;
 }
 .negocio-texto {
@@ -504,6 +505,31 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
   margin-top: 14px;
   font-weight: 700;
   color: var(--amarillo);
+}
+
+/* Pantallas medianas y grandes: foto y cuadro de texto miden EXACTAMENTE lo
+   mismo de alto. En celular se queda como arriba (foto 4:3 y texto debajo). */
+@media (min-width: 700px) {
+  .negocio {
+    align-items: stretch;    /* los dos lados se estiran al mismo alto (antes: center) */
+    min-height: 280px;       /* alto mínimo de cada fila: ESTE es el número para ajustar */
+  }
+  .negocio-imagen {
+    flex: 2 1 280px;         /* la foto toma 2 partes del ancho... */
+    position: relative;
+  }
+  .negocio-imagen img {
+    position: absolute;      /* la foto se acomoda al alto de la fila, no la define */
+    inset: 0;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  .negocio-texto {
+    flex: 3 1 320px;         /* ...y el texto 3 partes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* el texto queda centrado dentro del cuadro */
+  }
 }
 
 /* ---------- Centros poblados ---------- */
