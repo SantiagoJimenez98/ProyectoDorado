@@ -26,7 +26,7 @@ const negocios = [
   {
     id: "choridorados",
     nombre: "Choridorados",
-    imagen: "choridorados.jpg",
+    imagen: "choridorados.jpeg",
     descripcion: "Sabor llanero en cada bocado. Chorizos de cerdo asados al punto y arepas rellenas, calientes y generosas, son la excusa perfecta para sentarse a disfrutar la mejor comida casera de la región.",
     direccion: "Calle 2 # 4 - 05"
   },
@@ -40,7 +40,7 @@ const negocios = [
   {
     id: "asadero-de-pollo",
     nombre: "Asadero Brasa Roja",
-    imagen: "asadero-de-pollo.jpeg",
+    imagen: "asadero-de-pollo.png",
     descripcion: "Pollo asado dorado y jugoso, acompañado de un delicioso arroz chino. Una combinación irresistible para el almuerzo del domingo o cualquier día en que quieras darte un gusto.",
     direccion: "Calle 5 # 4 - 02"
   },
@@ -61,7 +61,7 @@ const negocios = [
   {
     id: "carniceria",
     nombre: "Carnicería Carnes Premium",
-    imagen: "carniceriaFabian.jpeg",
+    imagen: "carniceria.png",
     descripcion: "Cortes frescos de res, cerdo y pollo seleccionados con cuidado. Calidad y buen trato para que en tu mesa nunca falte un buen asado o un sancocho de domingo.",
     direccion: "Carrera 4 # 6 - 24"
   },

@@ -95,7 +95,15 @@
       ${index > 0 ? '<hr class="linea-dorada-hoteles">' : ""}
       <article class="hotel">
         <h2 class="hotel-nombre">${h.nombre}</h2>
-        <img class="hotel-foto" src="imagenes/hoteles/${h.imagen}" alt="${h.nombre}">
+        <!-- Galería: usa el mismo carrusel de siempre (script.js lo activa solo).
+             Un <img> por cada nombre en h.fotos; i + 1 numera las fotos para el alt. -->
+        <div class="carrusel carrusel-hotel">
+          <button class="carrusel-boton carrusel-anterior" aria-label="Foto anterior">&#10094;</button>
+          <div class="carrusel-pista">
+            ${h.fotos.map((foto, i) => `<img src="imagenes/hoteles/${h.carpeta}/${foto}" alt="${h.nombre}, foto ${i + 1}" loading="lazy">`).join("")}
+          </div>
+          <button class="carrusel-boton carrusel-siguiente" aria-label="Foto siguiente">&#10095;</button>
+        </div>
         <div class="hotel-grid">
           <div class="hotel-descripcion">
             <h3>Descripción</h3>
