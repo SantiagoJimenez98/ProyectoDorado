@@ -26,14 +26,14 @@ const negocios = [
   {
     id: "choridorados",
     nombre: "Choridorados",
-    imagen: "choridorados.jpeg",
+    imagen: "choridorados.png",
     descripcion: "Sabor llanero en cada bocado. Chorizos de cerdo asados al punto y arepas rellenas, calientes y generosas, son la excusa perfecta para sentarse a disfrutar la mejor comida casera de la región.",
     direccion: "Calle 2 # 4 - 05"
   },
   {
     id: "en-boca-de-todos",
     nombre: "En Boca de Todos",
-    imagen: "en-boca-de-todos.jpg",
+    imagen: "enBocadeTodos.jpeg",
     descripcion: "Hamburguesas jugosas y picadas generosas para compartir. Un lugar ideal para disfrutar con amigos o en familia, sin esperas largas y con mucho sabor.",
     direccion: "Pendiente"
   },
