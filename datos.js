@@ -23,7 +23,7 @@ const sitios = [
     id: "tres-guaduas",
     nombre: "Tres Guaduas: La Playita",
     nombreCorto: "Tres Guaduas",
-    imagen: "tresguadas.jpg",
+    imagen: "tres-guaduas.png",
     descripcion: "Tres Guaduas está diseñado bajo un concepto de descanso campestre, aventura y alojamiento. Su propuesta de valor se centra en ofrecer un refugio ideal para fines de semana, combinando la tranquilidad de la naturaleza con opciones de entretenimiento activo para familias y grupos de amigos.",
     tituloServicios: "Instalaciones y servicios",
     servicios: [
@@ -41,7 +41,7 @@ const sitios = [
     id: "alto-del-sapo",
     nombre: "El Alto del Sapo",
     nombreCorto: "Alto del Sapo",
-    imagen: "altoDelSapo.jpg",
+    imagen: "alto-del-sapo.png",
     descripcion: "Reconocido estadero y complejo campestre; un destino muy popular en la región del Ariari gracias a su privilegiado mirador con vistas panorámicas del paisaje llanero, su refrescante piscina de agua natural y una variada oferta de entretenimiento que incluye gastronomía típica criolla, canchas de tejo, billares y opciones tanto de pasadía como de alojamiento para el descanso familiar.",
     servicios: [
       ["Piscina de agua natural", "Su atracción insignia es una refrescante piscina alimentada por fuentes de agua natural, rodeada de vegetación y acondicionada para el disfrute de niños y adultos."],
@@ -58,7 +58,7 @@ const sitios = [
     id: "el-morro",
     nombre: "El Morro",
     nombreCorto: "El Morro",
-    imagen: null,
+    imagen: "el-morro.png",
     descripcion: "Destacado mirador turístico y balneario en la región del Ariari por ser un punto elevado estratégico que ofrece impresionantes vistas panorámicas de la Cordillera Oriental, los llanos y los atardeceres de la zona.",
     servicios: [
       ["Mirador paisajístico", "Ofrece una perspectiva privilegiada del piedemonte y las llanuras, siendo un punto muy concurrido para la toma de fotografías y la contemplación del paisaje."],
@@ -73,7 +73,7 @@ const sitios = [
     id: "destino-dorado",
     nombre: "Destino Dorado",
     nombreCorto: "Destino Dorado",
-    imagen: null,
+    imagen: "destino-dorado.png",
     descripcion: "Estadero y complejo recreativo campestre muy concurrido por familias y grupos de amigos que buscan un espacio para el descanso, el entretenimiento y el contacto con la naturaleza sin alejarse del pueblo.",
     servicios: [
       ["Piscina de agua natural", "Cuenta con una amplia piscina alimentada por corrientes de agua natural, rodeada de áreas verdes para disfrutar del clima cálido de la región."],
@@ -89,7 +89,7 @@ const sitios = [
     id: "juanba",
     nombre: "Centro Recreacional JuanBa",
     nombreCorto: "Juanba",
-    imagen: null,
+    imagen: "juanba.png",
     descripcion: "Es uno de los puntos turísticos y de esparcimiento más conocidos en la zona.",
     servicios: [
       ["Cancha de fútbol sintética", "Espacio iluminado para partidos de fútbol 5, campeonatos y alquiler por horas."],
