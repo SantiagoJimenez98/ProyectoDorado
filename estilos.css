@@ -414,8 +414,6 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
   content: "";
   flex: 1;
   height: 2px;
-  background: var(--dorado);
-  opacity: .55;
 }
 /* Galería de fotos del hotel: una foto grande a la vez, SIN recortarla.
    Reutiliza el carrusel de siempre (.carrusel / script.js). */
@@ -470,10 +468,10 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
 .hotel-ubicacion .mapa-google { height: 100%; min-height: 220px; }
 
 .linea-dorada-hoteles {
-  width: min(560px, 80%);
+  width: min(1000px, 100%);
   margin: 36px auto 0;
   border: 0;
-  border-top: 2px solid var(--dorado);
+  border-top: 5px solid var(--dorado);
 }
 
 /* ---------- Comercio ---------- */
