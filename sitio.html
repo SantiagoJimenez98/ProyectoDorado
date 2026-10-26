@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sitio recreativo - El Dorado, Meta</title>
+  <meta name="description" content="Conoce este sitio recreativo de El Dorado, Meta: fotos, servicios, ubicación y contacto.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Dancing+Script:wght@500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body id="inicio">
+
+  <!-- ===== ENCABEZADO (igual que en todas las páginas) ===== -->
+  <header class="encabezado">
+    <img class="encabezado-logo" src="imagenes/logo.png" alt="Logo de El Dorado, Municipio de Paz">
+
+    <div class="encabezado-centro">
+      <p class="titulo-sitio">EL DORADO</p>
+      <nav class="menu" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="sitios.html">Sitios recreativos</a>
+        <a href="hoteles.html">Hoteles</a>
+        <a href="comercio.html">Comercio</a>
+      </nav>
+    </div>
+
+    <img class="encabezado-bandera" src="imagenes/banderaDorado.png" alt="Bandera de El Dorado, Meta">
+  </header>
+
+  <!-- Esta plantilla está vacía: el script de abajo la llena con los datos del sitio elegido -->
+  <main id="detalle"></main>
+
+  <!-- ===== PIE DE PÁGINA (igual que en todas las páginas) ===== -->
+  <footer class="pie">
+    <a class="pie-arriba" href="#inicio">Volver arriba</a>
+
+    <div class="pie-grid contenedor">
+      <div class="pie-izquierda">
+        <img class="pie-logo" src="imagenes/logo.png" alt="Logo de El Dorado">
+        <nav aria-label="Enlaces del pie de página">
+          <p class="pie-titulo">Explora</p>
+          <a href="index.html">Inicio</a>
+          <a href="sitios.html">Sitios recreativos</a>
+          <a href="hoteles.html">Hoteles</a>
+          <a href="comercio.html">Comercio</a>
+        </nav>
+      </div>
+
+      <div class="pie-derecha">
+        <img class="pie-bandera" src="imagenes/banderaDorado.png" alt="Bandera de El Dorado">
+        <p>Alcaldía de El Dorado<br>
+           Dirección: Cra 5 Nº 6-25 Centro El Dorado<br>
+           Teléfono móvil: 3213096008<br>
+           Correo institucional: contactenos@eldorado-meta.gov.co</p>
+        <p class="pie-web"><strong>Página web:</strong> <a href="https://www.eldorado-meta.gov.co/" target="_blank" rel="noopener">https://www.eldorado-meta.gov.co/</a></p>
+      </div>
+    </div>
+
+    <div class="pie-creditos">
+      <p>Proyecto aplicado de Trabajo de Grado – Tecnología en Desarrollo de Software, UNAD</p>
+      <p>Edgar Santiago Fonseca Jimenez</p>
+      <p>© 2026 Todos los derechos reservados</p>
+      <p>Las imágenes y descripciones son de carácter informativo</p>
+    </div>
+  </footer>
+
+  <!-- Primero los datos, luego el código que los usa, luego el comportamiento general -->
+  <script src="datos.js"></script>
+  <script>
+    // La dirección es sitio.html?id=tres-guaduas  ->  aquí leemos "tres-guaduas"
+    const id = new URLSearchParams(location.search).get("id");
+    // find busca en datos.js el sitio cuyo id coincide
+    const s = sitios.find(x => x.id === id);
+    const detalle = document.getElementById("detalle");
+
+    if (!s) {
+      detalle.innerHTML = `
+        <section class="contenedor sitio-bloque">
+          <h2 class="titulo-cafe">No encontramos ese sitio</h2>
+          <p class="sitio-descripcion"><a href="sitios.html">Volver a los sitios recreativos</a></p>
+        </section>`;
+    } else {
+      document.title = `${s.nombre} - El Dorado, Meta`;
+      const wa = s.whatsapp || [];
+
+      detalle.innerHTML = `
+        <!-- TÍTULO (misma banda verde de las otras páginas) -->
+        <section class="intro-banda">
+          <div class="intro-seccion contenedor">
+            <img class="intro-icono" src="imagenes/iconosIndex/iconoPiscina.png" alt="">
+            <div class="intro-texto">
+              <h1 class="intro-titulo">${s.nombreCorto}</h1>
+              ${s.subtitulo ? `<p class="sitio-subtitulo">${s.subtitulo}</p>` : ""}
+            </div>
+            <img class="intro-icono" src="imagenes/iconosIndex/iconoNaturaleza.png" alt="">
+          </div>
+        </section>
+
+        <!-- CARRUSEL DE FOTOS: un <img> por cada nombre de la lista s.fotos -->
+        <section class="contenedor">
+          <div class="carrusel carrusel-hotel">
+            <button class="carrusel-boton carrusel-anterior" aria-label="Foto anterior">&#10094;</button>
+            <div class="carrusel-pista">
+              ${s.fotos.map((foto, i) => `<img src="imagenes/sitios/${s.carpeta}/${foto}" alt="${s.nombre}, foto ${i + 1}" loading="lazy">`).join("")}
+            </div>
+            <button class="carrusel-boton carrusel-siguiente" aria-label="Foto siguiente">&#10095;</button>
+          </div>
+        </section>
+
+        <!-- DESCRIPCIÓN -->
+        <section class="contenedor">
+          <p class="sitio-descripcion">${s.descripcion}</p>
+        </section>
+
+        <!-- SERVICIOS: una tarjeta por cada elemento de s.servicios (pueden ser 3, 4, 6...) -->
+        <section class="contenedor sitio-bloque">
+          <h2 class="titulo-cafe">Servicios</h2>
+          <div class="servicios-grid">
+            ${s.servicios.map(sv => `
+              <article class="servicio">
+                <h3>${sv.titulo}</h3>
+                <div class="servicio-cuerpo">
+                  <img src="imagenes/servicios/${sv.icono}" alt="">
+                  <p>${sv.texto}</p>
+                </div>
+              </article>`).join("")}
+          </div>
+        </section>
+
+        <!-- UBICACIÓN -->
+        <section class="contenedor sitio-bloque">
+          <h2 class="titulo-cafe">Ubicación</h2>
+          <div class="sitio-mapa">
+            <iframe class="mapa-google" src="https://www.google.com/maps?q=${encodeURIComponent(s.mapaQuery)}&z=15&output=embed" loading="lazy" title="Ubicación de ${s.nombre}"></iframe>
+          </div>
+          <p class="sitio-ubicacion-texto">${s.ubicacion}</p>
+        </section>
+
+        <!-- CONTACTO: solo aparece lo que el sitio tenga en datos.js -->
+        <section class="contenedor sitio-contacto">
+          ${wa.length ? `
+            <div class="contacto-item">
+              <a href="https://wa.me/57${wa[0]}" target="_blank" rel="noopener"><img src="imagenes/iconosSitio/whatsapp.png" alt="WhatsApp"></a>
+              ${wa.map(n => `<a href="https://wa.me/57${n}" target="_blank" rel="noopener">+57 ${n}</a>`).join("")}
+            </div>` : ""}
+          ${s.instagram ? `
+            <div class="contacto-item">
+              <a href="https://www.instagram.com/${s.instagram}/" target="_blank" rel="noopener"><img src="imagenes/iconosSitio/instagram.png" alt="Instagram"></a>
+              <a href="https://www.instagram.com/${s.instagram}/" target="_blank" rel="noopener">@${s.instagram}</a>
+            </div>` : ""}
+          ${s.facebook ? `
+            <div class="contacto-item">
+              <a href="${s.facebook}" target="_blank" rel="noopener"><img src="imagenes/iconosSitio/facebook.png" alt="Facebook"></a>
+              <a href="${s.facebook}" target="_blank" rel="noopener">Facebook</a>
+            </div>` : ""}
+        </section>`;
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

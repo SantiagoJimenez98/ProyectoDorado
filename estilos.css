@@ -174,11 +174,13 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
   box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
 }
 .mapa figcaption {
-  margin-top: 8px;
-  font-size: .72rem;
-  font-style: italic;
-  letter-spacing: .04em;
+  font-size: 0.85rem;   /* Texto un poco más pequeño */
+  color: #666;          /* Gris suave para que no compita con el contenido principal */
+  font-style: italic;   /* Opcional: en cursiva */
+  margin-top: 8px;      /* Espacio entre la imagen y la nota */
 }
+
+
 
 /* Tarjeta verde (Historia y Ubicación) */
 .tarjeta-verde {
@@ -349,8 +351,9 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
 }
 .tarjeta-sitio img {
   width: 100%;
-  height: clamp(220px, 26vw, 300px);
-  object-fit: contain;
+  height: clamp(220px, 26vw, 300px);   /* alto de la zona de la ilustración */
+  object-fit: contain;                 /* la ilustración se ve COMPLETA, sin recortes */
+  /* sin "background": así se ve el verde de la tarjeta detrás de la figura */
 }
 
 /* ---------- Lugares que debes conocer (carrusel con más contenido) ---------- */
@@ -405,7 +408,7 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
   text-transform: uppercase;
   font-size: clamp(1.8rem, 4vw, 3.6rem);
   margin-bottom: 20px;
-  display: flex;
+  display: flex;            /* pone las líneas ::before y ::after a los lados del nombre */
   align-items: center;
   gap: 24px;
 }
@@ -414,9 +417,11 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
   content: "";
   flex: 1;
   height: 2px;
+  background: var(--dorado);
+  opacity: .55;
 }
-/* Galería de fotos del hotel: una foto grande a la vez, SIN recortarla.
-   Reutiliza el carrusel de siempre (.carrusel / script.js). */
+/* Galería de fotos: una foto grande a la vez, SIN recortarla. La usan hoteles.html
+   y sitio.html. Reutiliza el carrusel de siempre (.carrusel / script.js). */
 .carrusel-hotel {
   position: relative;           /* para poder poner las flechas encima de la foto */
   max-width: 860px;             /* ancho de la galería, centrada sobre las cajas de abajo */
@@ -468,10 +473,10 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
 .hotel-ubicacion .mapa-google { height: 100%; min-height: 220px; }
 
 .linea-dorada-hoteles {
-  width: min(1000px, 100%);
+  width: min(560px, 80%);
   margin: 36px auto 0;
   border: 0;
-  border-top: 5px solid var(--dorado);
+  border-top: 2px solid var(--dorado);
 }
 
 /* ---------- Comercio ---------- */
@@ -540,6 +545,101 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
     flex-direction: column;
     justify-content: center; /* el texto queda centrado dentro del cuadro */
   }
+}
+
+/* ---------- Página de cada sitio recreativo (sitio.html) ---------- */
+.sitio-subtitulo {
+  font-family: var(--fuente-titulos);
+  text-transform: uppercase;
+  color: #E8C37A;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  margin-top: 6px;
+}
+.sitio-descripcion {
+  max-width: 760px;
+  margin: 28px auto 0;
+  text-align: center;
+}
+.sitio-bloque { margin-top: 56px; }
+
+/* Tarjetas de servicios: se acomodan solas, sin importar cuántas sean */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+/* Si el número de tarjetas es impar, la última queda centrada */
+.servicio:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 11px);
+}
+.servicio {
+  background: var(--verde);
+  color: #fff;
+  border-radius: 14px;
+  padding: 18px 22px 20px;
+}
+.servicio h3 {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--amarillo);
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+.servicio-cuerpo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.servicio-cuerpo img {
+  width: 150px;
+  height: 110px;
+  object-fit: contain;
+  flex: none;
+}
+.servicio-cuerpo p {
+  flex: 1;
+  text-align: center;
+  font-size: .92rem;
+}
+
+/* Mapa y dirección */
+.sitio-mapa { max-width: 860px; margin: 0 auto; }
+.sitio-mapa .mapa-google { height: 340px; }
+.sitio-ubicacion-texto {
+  max-width: 760px;
+  margin: 14px auto 0;
+  text-align: center;
+}
+
+/* WhatsApp / Instagram / Facebook */
+.sitio-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px 64px;
+  margin-top: 40px;
+}
+.contacto-item { text-align: center; }
+.contacto-item a { display: block; text-decoration: none; font-weight: 600; }
+.contacto-item a:hover { text-decoration: underline; }
+.contacto-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin: 0 auto 6px;
+}
+
+@media (max-width: 760px) {
+  .servicios-grid { grid-template-columns: 1fr; }
+  .servicio:last-child:nth-child(odd) { width: auto; }
+  .servicio-cuerpo img { width: 84px; height: 84px; }
+}
+@media (max-width: 560px) {
+  .intro-seccion { flex-direction: column; gap: 18px; }   /* ícono, título, ícono: uno bajo otro */
 }
 
 /* ---------- Centros poblados ---------- */
