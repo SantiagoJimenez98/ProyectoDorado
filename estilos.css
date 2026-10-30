@@ -357,6 +357,13 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
 }
 
 /* ---------- Lugares que debes conocer (carrusel con más contenido) ---------- */
+.lugares.contenedor {
+  display: flex;
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  align-items: center;    /* Centra verticalmente si es necesario */
+  flex-wrap: wrap;        /* Permite que las tarjetas bajen si no caben en una sola línea */
+  gap: 30px;              /* Espacio de separación entre tarjeta y tarjeta */
+}
 .titulo-cafe {
   color: var(--cafe);
   text-align: center;
@@ -370,15 +377,24 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
 }
 .tarjeta-lugar img {
   width: 100%;
-  height: 190px;
-  object-fit: cover;
+  height: 200px;
+  object-fit: contain;
   border-radius: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
+}
+.tarjeta-lugar .credito-imagen {
+  font-size: 11px;       /* Letra bien pequeña */
+  color: #777777;        /* Un color gris suave para que no destaque demasiado */
+  display: block;        /* Hace que ocupe su propia línea debajo de la imagen */
+  margin-top: -20px;     /* Opcional: acerca el texto si el margen de la imagen es muy grande */
+  margin-bottom: 15px;   /* Espacio antes de que empiece el título de la tarjeta */
+  text-align: center;    /* Centrado (o quítalo si prefieres que esté alineado a un lado) */
 }
 .tarjeta-lugar h3 {
   font-family: var(--fuente-titulos);
   color: var(--verde);
   font-size: 1.5rem;
+  text-align: center;
   text-transform: uppercase;
   margin-bottom: 6px;
   line-height: 1.1;

@@ -35,7 +35,7 @@ const negocios = [
     nombre: "En Boca de Todos",
     imagen: "enBocadeTodos.jpeg",
     descripcion: "Hamburguesas jugosas y picadas generosas para compartir. Un lugar ideal para disfrutar con amigos o en familia, sin esperas largas y con mucho sabor.",
-    direccion: "Pendiente"
+    direccion: "Calle 3 # 4-46"
   },
   {
     id: "asadero-de-pollo",
