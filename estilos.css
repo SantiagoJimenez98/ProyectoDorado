@@ -283,6 +283,16 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
   padding: 50px 0 24px;
   flex-wrap: wrap;
 }
+/* Línea que separa el título de la sección de las tarjetas.
+   Más gruesa que .linea-dorada y con más espacio debajo. */
+.divisor-seccion {
+  width: min(700px, 85%);
+  height: 4px;
+  margin: 28px auto 64px;   /* arriba 28px, abajo 64px (antes de las tarjetas) */
+  border: 0;
+  border-radius: 2px;
+  background: var(--dorado);
+}
 
 .intro-icono {
   width: 110px;
@@ -424,23 +434,9 @@ h2, h3 { font-family: var(--fuente-titulos); font-weight: 400; line-height: 1.05
   text-transform: uppercase;
   font-size: clamp(1.8rem, 4vw, 3.6rem);
   margin-bottom: 20px;
-<<<<<<< HEAD
   display: flex;            /* pone las líneas ::before y ::after a los lados del nombre */
   align-items: center;
   gap: 24px;
-=======
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-.hotel-nombre::before,
-.hotel-nombre::after {
-  content: "";
-  flex: 1;
-  height: 2px;
-  background: var(--dorado);
-  opacity: .55;
->>>>>>> 32cb05e5fb73565dd3c62c51592c9904dccfd4c3
 }
 .hotel-nombre::before,
 .hotel-nombre::after {
