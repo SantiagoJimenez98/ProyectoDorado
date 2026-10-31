@@ -80,7 +80,7 @@ const sitios = [
     ubicacion: "Ubicado a solo tres minutos del casco urbano de El Dorado, Meta, sobre la vía a la vereda Caño Leche.",
     mapaQuery: "El Alto del Sapo, El Dorado, Meta, Colombia",
     whatsapp: ["3133985967"],
-    instagram: "",
+    instagram: "elaltodelsapo",
     facebook: ""   // pendiente: pegar el enlace de la página de Facebook (EL ALTO DEL SAPO)
   },
   {
@@ -100,7 +100,7 @@ const sitios = [
     ubicacion: "Ubicado en la vereda Caño Leche del municipio de El Dorado, Meta (junto a El Alto del Sapo).",
     mapaQuery: "El Morro, El Dorado, Meta, Colombia",
     whatsapp: ["3024635792"],
-    instagram: "",
+    instagram: "el_morro_dorado",
     facebook: ""   // pendiente: pegar el enlace de la página de Facebook (Centro Turístico El Morro - El Dorado, Meta)
   },
   {
@@ -140,8 +140,7 @@ const sitios = [
     ],
     ubicacion: "Ubicado estratégicamente sobre la vía que conecta al municipio de Cubarral con El Dorado, Meta.",
     mapaQuery: "Centro Recreacional JuanBa, El Dorado, Meta, Colombia",
-    whatsapp: ["3222366279","3108576190"],
-    instagram: "",
-    facebook: ""
+    whatsapp: ["3504423144", "3114648335"],
+    tiktok: "juanbacentrorecreacional"
   }
 ];

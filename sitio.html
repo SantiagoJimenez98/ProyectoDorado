@@ -6,7 +6,7 @@
   <title>Sitio recreativo - El Dorado, Meta</title>
   <meta name="description" content="Conoce este sitio recreativo de El Dorado, Meta: fotos, servicios, ubicación y contacto.">
   <link rel="icon" href="imagenes/logo.png" type="image/x-icon">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Dancing+Script:wght@500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -145,18 +145,23 @@
         <section class="contenedor sitio-contacto">
           ${wa.length ? `
             <div class="contacto-item">
-              <a href="https://wa.me/57${wa[0]}" target="_blank" rel="noopener"><img src="imagenes/iconosSitio/whatsapp.png" alt="WhatsApp"></a>
+              <a href="https://wa.me/57${wa[0]}" target="_blank" rel="noopener"><img src="imagenes/iconosRedes/whatsapp.png" alt="WhatsApp"></a>
               ${wa.map(n => `<a href="https://wa.me/57${n}" target="_blank" rel="noopener">+57 ${n}</a>`).join("")}
             </div>` : ""}
           ${s.instagram ? `
             <div class="contacto-item">
-              <a href="https://www.instagram.com/${s.instagram}/" target="_blank" rel="noopener"><img src="imagenes/iconosSitio/instagram.png" alt="Instagram"></a>
+              <a href="https://www.instagram.com/${s.instagram}/" target="_blank" rel="noopener"><img src="imagenes/iconosRedes/instagram.png" alt="Instagram"></a>
               <a href="https://www.instagram.com/${s.instagram}/" target="_blank" rel="noopener">@${s.instagram}</a>
             </div>` : ""}
           ${s.facebook ? `
             <div class="contacto-item">
-              <a href="${s.facebook}" target="_blank" rel="noopener"><img src="imagenes/iconosSitio/facebook.png" alt="Facebook"></a>
+              <a href="${s.facebook}" target="_blank" rel="noopener"><img src="imagenes/iconosRedes/facebook.png" alt="Facebook"></a>
               <a href="${s.facebook}" target="_blank" rel="noopener">Facebook</a>
+            </div>` : ""}
+            ${s.tiktok ? `
+            <div class="contacto-item">
+              <a href="https://www.tiktok.com/@${s.tiktok}" target="_blank" rel="noopener"><img src="imagenes/iconosRedes/tiktok.png" alt="TikTok"></a>
+              <a href="https://www.tiktok.com/@${s.tiktok}" target="_blank" rel="noopener">@${s.tiktok}</a>
             </div>` : ""}
         </section>`;
     }
